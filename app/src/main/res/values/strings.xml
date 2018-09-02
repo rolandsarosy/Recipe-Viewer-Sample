@@ -10,6 +10,9 @@
     <string name="catalog_view_hint_network_error">There was a problem with the connection</string>
     <string name="catalog_view_hint_retry">retry</string>
 
+    <!-- Catalog view menu label to refresh the layout [CHARLIMIT=15] -->
+    <string name="catalog_view_refresh">Refresh</string>
+
     <!-- Label represented in the detail view as the header for the ingredient list [CHARLIMIT=NONE] -->
     <string name="detail_view_label_ingredients">Ingredients:</string>
 

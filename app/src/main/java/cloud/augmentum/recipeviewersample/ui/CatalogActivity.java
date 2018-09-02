@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,6 +32,7 @@ public class CatalogActivity extends AppCompatActivity {
     private static final String LOG_TAG = CatalogActivity.class.getSimpleName();
 
     private RecyclerView mRecyclerView;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Recipe> mDataset;
@@ -39,6 +43,7 @@ public class CatalogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
         mContext = this;
+        mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
         // Find reference to the RecyclerView and set it to fixed size for performance improvements
         mRecyclerView = findViewById(R.id.recipe_recycler_view);
@@ -48,6 +53,13 @@ public class CatalogActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshOperation();
+            }
+        });
 
         // Setup the Floating Action Button
         setupFab();
@@ -134,5 +146,32 @@ public class CatalogActivity extends AppCompatActivity {
                 switchEmptyTextViewVisibility(true);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_catalog, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Manually trigger the refreshing in case of menu click
+            case R.id.menu_refresh:
+                mSwipeRefreshLayout.setRefreshing(true);
+                refreshOperation();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Helper method to refresh the RecyclerView with fresh content from the API endpoint
+     */
+    public void refreshOperation() {
+        mRecyclerView.setAdapter(null);
+        makeNetworkCall();
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 }
