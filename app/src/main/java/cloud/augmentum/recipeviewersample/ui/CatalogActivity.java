@@ -29,12 +29,9 @@ import retrofit2.Response;
 
 public class CatalogActivity extends AppCompatActivity {
 
-    private static final String LOG_TAG = CatalogActivity.class.getSimpleName();
-
     private RecyclerView mRecyclerView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
     private List<Recipe> mDataset;
     private Context mContext;
 
@@ -44,13 +41,10 @@ public class CatalogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_catalog);
         mContext = this;
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
-
-        // Find reference to the RecyclerView and set it to fixed size for performance improvements
         mRecyclerView = findViewById(R.id.recipe_recycler_view);
-        mRecyclerView.setHasFixedSize(true);
 
         // Create and set the LayoutManager and ItemAnimators
-        mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -169,7 +163,7 @@ public class CatalogActivity extends AppCompatActivity {
     /**
      * Helper method to refresh the RecyclerView with fresh content from the API endpoint
      */
-    public void refreshOperation() {
+    private void refreshOperation() {
         mRecyclerView.setAdapter(null);
         makeNetworkCall();
         mSwipeRefreshLayout.setRefreshing(false);
