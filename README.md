@@ -1,4 +1,4 @@
-Sample Recipe Viewer 
+Simple Recipe Viewer 
 ===================================
 
 This app display a list of recipes from a specified endpoint.  
