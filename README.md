@@ -28,6 +28,7 @@ The following libraries are used in this project:
 - Retrofit 2
 - GSON
 - Glide 4
+- Cloudinary SDK
 
 Feature requirements
 ---------------
