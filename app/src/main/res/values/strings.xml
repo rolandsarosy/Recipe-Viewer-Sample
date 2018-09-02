@@ -1,0 +1,50 @@
+<resources>
+    <!-- The name of the application [CHARLIMIT=30] -->
+    <string name="app_name">Recipe Viewer Sample</string>
+
+    <!-- The empty state text view will be shown if there is no internet connection or there was an
+    error with the network call. [CHARLIMIT=NONE] {MULTIPLE LINE BREAKS]-->
+    <string name="catalog_view_empty_state">We couldn\'t show you any recipes.\n Perhaps try reloading or upload your own recipe!</string>
+
+    <!-- Catalog activity SnackBar hints [CHARLIMIT=45] & [CHARLIMIT=10]-->
+    <string name="catalog_view_hint_network_error">There was a problem with the connection</string>
+    <string name="catalog_view_hint_retry">retry</string>
+
+    <!-- Label represented in the detail view as the header for the ingredient list [CHARLIMIT=NONE] -->
+    <string name="detail_view_label_ingredients">Ingredients:</string>
+
+    <!-- Label snippet shown AFTER the 'number of ingredients required for a recipe' [CHARLIMIT=MINIMAL]-->
+    <string name="detail_view_label_number_of_ingredients">ingr</string>
+
+    <!-- The title of the Upload activity [CHARLIMIT=35] -->
+    <string name="upload_view_title">Send us a recipe!</string>
+
+    <!-- These are the TextView labels in the Upload activity [CHARLIMIT=NONE] -->
+    <string name="upload_view_label_submit_btn">Submit recipe</string>
+    <string name="upload_view_label_img_url">Please provide an image URL for your recipe!</string>
+    <string name="upload_view_label_steps">Tell us the steps to create the recipe!</string>
+    <string name="upload_view_label_ingredients">Add your lists of ingredients, their quantities and types!</string>
+    <string name="upload_view_label_name">Add a name for your recipe!</string>
+    <string name="upload_view_label_list_ingredients">Current ingredients:\n\n</string>
+    <string name="upload_view_label_list_steps">Current steps:\n\n</string>
+    <string name="upload_view_label_add_ingredient_btn">add ingredient</string>
+    <string name="upload_view_label_add_step_btn">add step</string>
+
+    <!-- These are the EditText hints in the Upload activity [CHARLIMIT=20] -->
+    <string name="upload_view_hint_name">Name</string>
+    <string name="upload_view_hint_steps">Steps\.\.\.</string>
+    <string name="upload_view_hint_ingredient_name">Name</string>
+    <string name="upload_view_hint_ingredient_quantity">Quantity</string>
+    <string name="upload_view_hint_ingredient_type">Type</string>
+    <string name="upload_view_hint_img_url">Image Url</string>
+    <string name="upload_view_hint_error_empty_field">Cannot be empty</string>
+
+    <!-- Upload activity SnackBar titles [CHARLIMIT=35]-->
+    <string name="upload_view_hint_upload_successful">Successfully uploaded recipe!</string>
+    <string name="upload_view_hint_upload_unsuccessful">Upload unsuccessful</string>
+    <string name="upload_view_hint_empty_field">One or more fields are empty</string>
+
+    <!-- Upload activity SnackBar actions [CHARLIMIT=10] -->
+    <string name="upload_view_hint_leave">leave</string>
+    <string name="upload_view_hint_retry">retry</string>
+</resources>

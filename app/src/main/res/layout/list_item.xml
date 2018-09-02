@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_parent"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+        <!-- The ImageView is filled by the RecyclerView and scaled by Glide -->
+        <ImageView
+            android:id="@+id/list_item_recipe_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@drawable/placeholder_img"
+            tools:scaleType="centerCrop"
+            android:foreground="@drawable/list_item_greyscale_overlay"/>
+
+        <!-- Catalog TextView that displays the name on top of the image of the dish -->
+        <!-- White text color was specified in the design guidelines but note that it is not fortunate to
+        use because some images may already have a 'whiteish' tint making the text almost unreadable-->
+        <!-- Unknown font family in the design guidelines -->
+        <TextView
+            android:id="@+id/list_item_recipe_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textColor="#FFFF"
+            android:textSize="24sp"
+            tools:text="Vegan spicy curry with lentils" />
+</RelativeLayout>

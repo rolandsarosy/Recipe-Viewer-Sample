@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="56dp">
+
+        <!-- Image is scaled by Glide -->
+        <ImageView
+            android:id="@+id/detail_view_recipe_image"
+            android:layout_width="match_parent"
+            android:layout_height="579dp"
+            android:foreground="@drawable/detail_view_greyscale_overlay"
+            tools:scaleType="centerCrop"
+            tools:src="@drawable/placeholder_img" />
+
+        <TextView
+            android:id="@+id/detail_view_recipe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="119dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textColor="#FFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/detail_view_recipe_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Vegan spicy curry with lentils" />
+
+        <!-- Placeholder text for demonstration purposes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="6dp"
+            android:drawableStart="@drawable/ic_cooking_time"
+            android:gravity="center"
+            android:text="30 min"
+            android:textColor="#C2BEBE"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_view_recipe_name"
+            tools:ignore="HardcodedText" />
+
+        <!-- Placeholder text for demonstration purposes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="21dp"
+            android:layout_marginStart="30dp"
+            android:text="TÓTH LAURA"
+            android:textColor="#FFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/detail_view_recipe_image"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:fontFamily="@font/roboto_condensed_bold"
+            tools:ignore="HardcodedText" />
+
+        <!-- Placeholder text for demonstration purposes -->
+        <TextView
+            android:id="@+id/detail_view_information_calories"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="33dp"
+            android:fontFamily="@font/open_sans_condensed_light"
+            android:gravity="center"
+            android:text="150 kcal"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/detail_view_information_time"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_view_recipe_image"
+            tools:ignore="HardcodedText" />
+
+        <!-- Decorative separator to the left of the middle element-->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toStartOf="@id/detail_view_information_time"
+            app:layout_constraintTop_toBottomOf="@+id/detail_view_recipe_image" />
+
+        <!-- Placeholder text for demonstration purposes -->
+        <TextView
+            android:id="@+id/detail_view_information_time"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/open_sans_condensed_light"
+            android:gravity="center"
+            android:text="30 min"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/detail_view_information_ingredients"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/detail_view_information_calories"
+            app:layout_constraintTop_toBottomOf="@+id/detail_view_recipe_image"
+            tools:ignore="HardcodedText" />
+
+        <!-- Decorative separator to the right of the middle element-->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@id/detail_view_information_time"
+            app:layout_constraintTop_toBottomOf="@+id/detail_view_recipe_image" />
+
+        <!-- Contains the number of ingredients. Values added programmatically -->
+        <TextView
+            android:id="@+id/detail_view_information_ingredients"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="33dp"
+            android:fontFamily="@font/open_sans_condensed_light"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/detail_view_information_time"
+            app:layout_constraintTop_toBottomOf="@id/detail_view_recipe_image"
+            tools:text="5 ingr" />
+
+        <!-- Ingredients header -->
+        <TextView
+            android:id="@+id/detail_view_ingredients_header"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="#ededed"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:paddingBottom="4dp"
+            android:paddingEnd="24dp"
+            android:paddingStart="24dp"
+            android:paddingTop="12dp"
+            android:text="@string/detail_view_label_ingredients"
+            android:textAllCaps="true"
+            android:textColor="#4a4a4a"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_view_information_calories" />
+
+        <!-- List of ingredients. Note that the formatting of this is changed from the design -->
+        <!-- Guidelines since that version is not fool-proof in English (for example) if -->
+        <!-- Its missing plural forms. Example: '- 2 Acorn Squash' instead of '- Acorn Squash, 2' -->
+        <TextView
+            android:id="@+id/detail_view_ingredients_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ededed"
+            android:fontFamily="@font/roboto_italic"
+            android:paddingEnd="33dp"
+            android:paddingStart="33dp"
+            android:textColor="#4a4a4a"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/detail_view_ingredients_header"
+            tools:text="- Beef roast, 1\n- Brown gravy mix, 1 package\n- Dried italian salad dressing mix, 1 package\n- Dry ranch dressing mix, 1 package\n- Water, 1/2 cup" />
+
+        <!-- List of steps to make the recipe. -->
+        <TextView
+            android:id="@+id/detail_view_steps_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans_condensed_light"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_view_ingredients_list"
+            tools:text="Preheat oven to 425°F. Cut off the woody bottom part of the asparagus spears and discard. With a vegetable peeler, peel off the skin on the bottom 2-3 inches of the spears (this keeps the asparagus from being all, and if you eat asparagus you know what I mean by that). Place asparagus on foil-lined baking sheet and drizzle with olive oil. I'm tired of copying this at this point so just order the stuff" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
