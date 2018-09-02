@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.cloudinary.android.MediaManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +49,9 @@ public class UploadActivity extends AppCompatActivity {
 
         // Set up the buttons with the onClickListeners and helper methods
         setupClickListeners();
+
+        // Initialize the Cloudinary MediaManager
+        MediaManager.init(this);
 
     }
 

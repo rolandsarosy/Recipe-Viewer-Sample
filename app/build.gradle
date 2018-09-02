@@ -34,4 +34,6 @@ dependencies {
     // Glide 4 library
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    // Cloudinary SDK for cloud image uploads
+    implementation group: 'com.cloudinary', name: 'cloudinary-android', version: '1.24.0'
 }
